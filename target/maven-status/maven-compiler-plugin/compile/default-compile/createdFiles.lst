@@ -1,0 +1,14 @@
+Clases\Cliente.class
+Controlador\ProductoDAO.class
+Clases\DetalleCompra.class
+Clases\Producto.class
+Clases\Carrito.class
+Controlador\ComprasDAO.class
+ConexionBD\Conexion.class
+Controlador\ControladorImg.class
+Clases\Compra.class
+ConexionBD\Fecha.class
+Clases\Pago.class
+Controlador\Metodos.class
+Controlador\ClienteDAO.class
+Controlador\Controlador.class

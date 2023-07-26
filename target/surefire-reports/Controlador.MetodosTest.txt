@@ -1,0 +1,190 @@
+-------------------------------------------------------------------------------
+Test set: Controlador.MetodosTest
+-------------------------------------------------------------------------------
+Tests run: 39, Failures: 14, Errors: 2, Skipped: 0, Time elapsed: 35.098 s <<< FAILURE! - in Controlador.MetodosTest
+Controlador.MetodosTest.testEliminarClienteFallo  Time elapsed: 4.212 s  <<< FAILURE!
+org.mockito.exceptions.verification.TooFewActualInvocations: 
+
+preparedStatement.executeUpdate();
+Wanted 2 times:
+-> at Controlador.MetodosTest.testEliminarClienteFallo(MetodosTest.java:903)
+But was 1 time:
+-> at Controlador.ClienteDAO.EliminarCliente(ClienteDAO.java:151)
+
+	at Controlador.MetodosTest.testEliminarClienteFallo(MetodosTest.java:903)
+
+Controlador.MetodosTest.testAgregarNuevoProducto  Time elapsed: 5.438 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+preparedStatement.setString(
+    1,
+    "Producto de prueba"
+);
+-> at Controlador.MetodosTest.testAgregarNuevoProducto(MetodosTest.java:740)
+Actually, there were zero interactions with this mock.
+
+	at Controlador.MetodosTest.testAgregarNuevoProducto(MetodosTest.java:740)
+
+Controlador.MetodosTest.testguardarCompra2  Time elapsed: 0.044 s  <<< FAILURE!
+org.mockito.exceptions.verification.opentest4j.ArgumentsAreDifferent: 
+
+Argument(s) are different! Wanted:
+preparedStatement.setString(3, "2023-04-8");
+-> at Controlador.MetodosTest.testguardarCompra2(MetodosTest.java:588)
+Actual invocations have different arguments at position [1]:
+preparedStatement.setInt(1, 1);
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:41)
+preparedStatement.setInt(2, 1);
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:42)
+preparedStatement.setString(3, "2023-04-18");
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:43)
+preparedStatement.setDouble(4, 10.0d);
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:44)
+preparedStatement.setString(5, "Pagado");
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:45)
+preparedStatement.executeUpdate();
+-> at Controlador.ComprasDAO.guardarCompra(ComprasDAO.java:46)
+
+	at Controlador.MetodosTest.testguardarCompra2(MetodosTest.java:588)
+
+Controlador.MetodosTest.testCalcularTotalEr  Time elapsed: 0.055 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <20.0> but was: <21.0>
+	at Controlador.MetodosTest.testCalcularTotalEr(MetodosTest.java:257)
+
+Controlador.MetodosTest.testGuardarDetalleCompra2  Time elapsed: 0.046 s  <<< FAILURE!
+org.mockito.exceptions.verification.opentest4j.ArgumentsAreDifferent: 
+
+Argument(s) are different! Wanted:
+preparedStatement.setDouble(4, 9.0d);
+-> at Controlador.MetodosTest.testGuardarDetalleCompra2(MetodosTest.java:638)
+Actual invocations have different arguments at position [1]:
+preparedStatement.setInt(1, 1);
+-> at Controlador.ComprasDAO.guardarDetalleCompra(ComprasDAO.java:57)
+preparedStatement.setInt(2, 1);
+-> at Controlador.ComprasDAO.guardarDetalleCompra(ComprasDAO.java:58)
+preparedStatement.setInt(3, 2);
+-> at Controlador.ComprasDAO.guardarDetalleCompra(ComprasDAO.java:59)
+preparedStatement.setDouble(4, 10.0d);
+-> at Controlador.ComprasDAO.guardarDetalleCompra(ComprasDAO.java:60)
+preparedStatement.executeUpdate();
+-> at Controlador.ComprasDAO.guardarDetalleCompra(ComprasDAO.java:61)
+
+	at Controlador.MetodosTest.testGuardarDetalleCompra2(MetodosTest.java:638)
+
+Controlador.MetodosTest.testAgregarNuevoProducto2  Time elapsed: 3.056 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+preparedStatement.setString(
+    1,
+    "Producto de prueba"
+);
+-> at Controlador.MetodosTest.testAgregarNuevoProducto2(MetodosTest.java:775)
+Actually, there were zero interactions with this mock.
+
+	at Controlador.MetodosTest.testAgregarNuevoProducto2(MetodosTest.java:775)
+
+Controlador.MetodosTest.testEliminarCliente2  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+preparedStatement.setString(
+    1,
+    "valor esperado"
+);
+-> at Controlador.MetodosTest.testEliminarCliente2(MetodosTest.java:882)
+
+However, there was exactly 1 interaction with this mock:
+preparedStatement.executeUpdate();
+-> at Controlador.ClienteDAO.EliminarCliente(ClienteDAO.java:151)
+
+
+	at Controlador.MetodosTest.testEliminarCliente2(MetodosTest.java:882)
+
+Controlador.MetodosTest.testAgregarCliente2  Time elapsed: 0.023 s  <<< FAILURE!
+org.mockito.exceptions.verification.opentest4j.ArgumentsAreDifferent: 
+
+Argument(s) are different! Wanted:
+preparedStatement.setString(
+    2,
+    "Juan Pérez Fallo"
+);
+-> at Controlador.MetodosTest.testAgregarCliente2(MetodosTest.java:838)
+Actual invocations have different arguments at position [1]:
+preparedStatement.setString(
+    1,
+    "12345678"
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:72)
+preparedStatement.setString(
+    2,
+    "Juan Pérez"
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:73)
+preparedStatement.setString(
+    3,
+    "Calle Falsa 123"
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:74)
+preparedStatement.setString(
+    4,
+    "juan.perez@mail.com"
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:75)
+preparedStatement.setString(
+    5,
+    "password"
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:76)
+preparedStatement.executeUpdate(
+    
+);
+-> at Controlador.ClienteDAO.AgregarCliente(ClienteDAO.java:77)
+
+	at Controlador.MetodosTest.testAgregarCliente2(MetodosTest.java:838)
+
+Controlador.MetodosTest.testMisCompras2  Time elapsed: 0.02 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at Controlador.MetodosTest.testMisCompras2(MetodosTest.java:710)
+
+Controlador.MetodosTest.EditarCliente  Time elapsed: 0 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Not supported yet.
+	at Controlador.MetodosTest.EditarCliente(MetodosTest.java:981)
+
+Controlador.MetodosTest.testBuscarProducto2  Time elapsed: 0.024 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Activo> but was: <null>
+	at Controlador.MetodosTest.testBuscarProducto2(MetodosTest.java:515)
+
+Controlador.MetodosTest.testguardarCompra  Time elapsed: 0.987 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+preparedStatement.setInt(1, 1);
+-> at Controlador.MetodosTest.testguardarCompra(MetodosTest.java:402)
+Actually, there were zero interactions with this mock.
+
+	at Controlador.MetodosTest.testguardarCompra(MetodosTest.java:402)
+
+Controlador.MetodosTest.testRealizarPago2  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Pago realizado exitosamente.> but was: <No se pudo realizar el pago.>
+	at Controlador.MetodosTest.testRealizarPago2(MetodosTest.java:541)
+
+Controlador.MetodosTest.testEditar  Time elapsed: 1.836 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "Clases.Cliente.getId()" because "resultado" is null
+	at Controlador.MetodosTest.testEditar(MetodosTest.java:338)
+
+Controlador.MetodosTest.testGuardarCompra  Time elapsed: 2.668 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+preparedStatement.setInt(1, 1);
+-> at Controlador.MetodosTest.testGuardarCompra(MetodosTest.java:427)
+Actually, there were zero interactions with this mock.
+
+	at Controlador.MetodosTest.testGuardarCompra(MetodosTest.java:427)
+
+Controlador.MetodosTest.testAgregarCarrito_ProductoNuevo  Time elapsed: 3.97 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Carrito{item=0, idProducto=1, nombres=Producto 1, foto=null, descripcion=Descripción del producto 1, precioCompra=10.0, cantidad=1, subTotal=10.0}]> but was: <[Carrito{item=0, idProducto=0, nombres=null, foto=null, descripcion=null, precioCompra=0.0, cantidad=1, subTotal=0.0}]>
+	at Controlador.MetodosTest.testAgregarCarrito_ProductoNuevo(MetodosTest.java:125)
+
